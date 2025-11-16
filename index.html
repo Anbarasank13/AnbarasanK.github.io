@@ -154,6 +154,54 @@
             color: #667eea;
             font-size: 0.9rem;
         }
+        /* INTERACTIVE CONTACT BAR */
+.bottom-contact {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-top: 3px solid rgba(0,0,0,0.08);
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: #f5f6ff;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.contact-item:hover {
+    transform: translateY(-4px);
+    background: #e9eaff;
+    border-color: #667eea;
+    box-shadow: 0 6px 20px rgba(102,126,234,0.2);
+}
+
+.contact-item a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    color: #667eea;
+}
+
+.contact-icon {
+    font-size: 1.4rem;
+}
+
 
         /* PROJECTS */
         .project-card {
@@ -199,6 +247,65 @@
             padding: 30px;
             text-align: center;
         }
+/* HERO ANIMATIONS */
+.hero * {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero h1 {
+    animation-delay: 0.2s;
+}
+
+.hero p {
+    animation-delay: 0.35s;
+}
+
+.btn-primary-hero, .btn-outline-hero {
+    animation-delay: 0.5s;
+}
+
+/* Fade + Slide Up */
+@keyframes fadeUp {
+    0% { 
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Background Circles */
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero-circle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 50%;
+    animation: floatCircle 10s ease-in-out infinite;
+}
+
+@keyframes floatCircle {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-40px) scale(1.05); }
+}
+
+/* Parallax mouse movement */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
 
         /* MOBILE */
         @media (max-width: 768px) {
@@ -235,16 +342,39 @@
 
 <!-- HERO -->
 <section id="home" class="hero">
-    <div>
+    
+    <!-- Animated Background -->
+    <div class="hero-bg">
+        <div class="hero-circle" style="top: 20%; left: 15%; animation-duration: 9s;"></div>
+        <div class="hero-circle" style="top: 60%; left: 70%; animation-duration: 12s;"></div>
+        <div class="hero-circle" style="top: 40%; left: 45%; width: 220px; height: 220px; animation-duration: 15s;"></div>
+    </div>
+
+    <div style="position: relative; z-index: 2;">
         <h1>Anbarasan K</h1>
+
         <p style="font-size: 1.3rem; margin-bottom: 15px;">
             Aspiring Data Scientist & ML Developer | Python Developer
         </p>
-        <p>
-            Passionate about building intelligent systems using Machine Learning, Python, and Data-driven solutions.
+
+        <p style="max-width: 700px; margin: auto;">
+            Passionate about building intelligent systems using Machine Learning, Python, 
+            and Data-driven applications.
         </p>
+
+        <!-- BUTTONS -->
+        <div style="margin-top: 30px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            
+            <a href="#projects" class="btn-primary-hero">View My Work</a>
+
+            <a href="https://github.com/anbarasasnk2003" target="_blank"
+               class="btn-outline-hero">GitHub Profile</a>
+        </div>
     </div>
+
 </section>
+
+
 
 <!-- ABOUT -->
 <section id="about">
@@ -378,23 +508,37 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-    <div class="container">
-        <h2 class="section-title">Contact</h2>
+<!-- INTERACTIVE CONTACT BAR -->
+<section id="bottom-contact" class="bottom-contact">
+    <div class="contact-container">
 
-        <div class="contact-info">
-            <p><strong>Phone:</strong> +91 6374666588</p>
-            <p><strong>Email:</strong> <a href="mailto:anbarasank1310@gmail.com">anbarasank1310@gmail.com</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/anbarasasnk2003">github.com/anbarasasnk2003</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/anbarasan-k1310">linkedin.com/in/anbarasan-k1310</a></p>
-
-<a class="resume-btn" href="Anbarasan_K_RESUME.pdf" download="Anbarasan_K_Resume.pdf">
-    Download Resume
-</a>
-
+        <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <a href="tel:+916374666588">+91 6374666588</a>
         </div>
+
+        <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <a href="mailto:anbarasank1310@gmail.com">anbarasank1310@gmail.com</a>
+        </div>
+
+        <div class="contact-item">
+            <span class="contact-icon">🐱</span>
+            <a href="https://github.com/anbarasasnk2003" target="_blank">
+                github.com/anbarasasnk2003
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <span class="contact-icon">🔗</span>
+            <a href="https://linkedin.com/in/anbarasan-k1310" target="_blank">
+                linkedin.com/in/anbarasan-k1310
+            </a>
+        </div>
+
     </div>
 </section>
+
 
 <footer>
     © 2025 Anbarasan K — All Rights Reserved
@@ -402,6 +546,18 @@
 
 <!-- SCROLL FIX SCRIPT -->
 <script>
+// Parallax floating circles on mouse move
+document.addEventListener("mousemove", function(e) {
+    const circles = document.querySelectorAll(".hero-circle");
+    const x = (e.clientX / window.innerWidth) - 0.5;
+    const y = (e.clientY / window.innerHeight) - 0.5;
+
+    circles.forEach((circle, i) => {
+        const speed = (i + 1) * 15; 
+        circle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+    });
+});
+
 // Dynamic Smooth Scrolling — FIXES WHITE SPACE ON MOBILE + LAPTOP
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
