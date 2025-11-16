@@ -19,6 +19,36 @@
             margin: auto;
             padding: 0 20px;
         }
+        .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-box {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.skill-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.skill-tag {
+    background: #e5e7ff;
+    padding: 7px 13px;
+    border-radius: 20px;
+    margin: 5px;
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #667eea;
+}
+
 
         /* HEADER */
         header {
@@ -239,25 +269,88 @@
     <div class="container">
         <h2 class="section-title">Skills</h2>
 
-        <div style="text-align:center;">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">Deep learning</span>
-            <span class="skill-tag">R</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">NumPy</span>
-            <span class="skill-tag">Scikit-Learn</span>
-            <span class="skill-tag">EDA</span>
-            <span class="skill-tag">ETL</span>
-            <span class="skill-tag">Django</span>
-            <span class="skill-tag">Power BI</span>
-            <span class="skill-tag">Tableau</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">Google Colab</span>
+        <div class="skills-grid">
+
+            <!-- Languages -->
+            <div class="skill-box">
+                <h3 class="skill-title">Programming Languages</h3>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">R</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">JavaScript</span>
+            </div>
+
+            <!-- Development -->
+            <div class="skill-box">
+                <h3 class="skill-title">Development</h3>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">API Development</span>
+                <span class="skill-tag">Git</span>
+            </div>
+
+            <!-- ML / DL -->
+            <div class="skill-box">
+                <h3 class="skill-title">Machine Learning & Deep Learning</h3>
+                <span class="skill-tag">Scikit-Learn</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">EDA</span>
+                <span class="skill-tag">Model Evaluation</span>
+                <span class="skill-tag">Feature Engineering</span>
+            </div>
+
+            <!-- Software Tools -->
+            <div class="skill-box">
+                <h3 class="skill-title">Software Tools</h3>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">Google Colab</span>
+                <span class="skill-tag">VS Code</span>
+            </div>
+
         </div>
     </div>
 </section>
+<section id="education">
+    <div class="container">
+        <h2 class="section-title">Education</h2>
+
+        <div class="project-card">
+            <h3>M.Sc Data Science</h3>
+            <p>Vellore Institute of Technology, Chennai</p>
+            <p><strong>2024 – 2026</strong></p>
+            <p>CGPA: 8.2/10</p>
+        </div>
+
+        <div class="project-card">
+            <h3>B.Sc Computer Science with Data Analytics</h3>
+            <p>PSG College of Arts & Science</p>
+            <p><strong>2021 – 2024</strong></p>
+            <p>CGPA: 8.3/10</p>
+        </div>
+    </div>
+</section>
+<section id="certifications">
+    <div class="container">
+        <h2 class="section-title">Certifications</h2>
+
+        <div class="project-card">
+            <h3>Complete Django Web Development Course</h3>
+            <p>GeeksForGeeks — 2025</p>
+            <a href="https://www.geeksforgeeks.org/certificate/2aecf324603075c3c4cb47d36486a622" target="_blank">View Certificate</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Database Management Systems</h3>
+            <p>Certified (Academic Coursework)</p>
+        </div>
+    </div>
+</section>
+
+
 
 <!-- PROJECTS -->
 <section id="projects">
